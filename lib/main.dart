@@ -27,13 +27,14 @@ class XylophoneApp extends StatelessWidget {
       Colors.yellow,
       Colors.green,
       Colors.indigo,
-      Colors.indigoAccent,
+      Colors.teal,
+      Colors.blue,
     ];
 
     List<Widget> finalKeys = [];
 
-    for(int i = 0; i < 8; i++){
-      Expanded expanded = buildKey(colors[i], i);
+    for(int i = 0; i < 7; i++){
+      Expanded expanded = buildKey(colors[i], i + 1);
       finalKeys.add(expanded);
     }
 
@@ -48,15 +49,7 @@ class XylophoneApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              buildKey(Colors.red,1),
-              buildKey(Colors.orange,2),
-              buildKey(Colors.yellow,3),
-              buildKey(Colors.green,4),
-              buildKey(Colors.teal,5),
-              buildKey(Colors.blue,6),
-              buildKey(Colors.purple,7),
-            ]
+            children: buildKeyLayout(),
           ),
         ),
       ),
